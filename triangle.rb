@@ -1,9 +1,9 @@
 class Triangle
 	def initialize
-		puts 'Hello puts sides of traingle, like: 12,21,12'
+		puts 'Hello! Puts sides of traingle, like: 12,21,12'
 		@answer = gets.chomp
 		while !its_ok?		
-		puts 'Wrong syblos is exist in the string, please repiat:'
+		puts 'Wrong sybols is exist, please try again, like: 12,21,12'
 			@answer = gets.chomp
 		end
 	end
@@ -20,16 +20,15 @@ class Triangle
 		arr = @answer.split(',')
 		a = arr[0].to_i
 		b = arr[1].to_i
-		c = arr[2].to_i 
+		c = arr[2].to_i
+		if a == b || b == c || a == c
+		then puts 'Its isosceles triangle'
+		end 
 		if a == b && b == c
 		then puts 'Its equilateral triangle'
 		end
-		if a == b || b == c || a == c
-		then puts 'Its isosceles triangle'
-		end
 		if a**2 == b**2 + c**2 || b**2 == a** + c**2 || c**2 == b**2 + a**2
 		then puts 'Its rectangular triangle'
-		else puts 'It is simple triangle'
 		end
 	end	
 	
@@ -43,6 +42,8 @@ private
 end
 tr = Triangle.new
 if tr.its_triang?
-	then tr.whats_kind		
+	then
+		puts 'It is a triangle'
+		tr.whats_kind		
 	else puts 'Its not a triangle, sorry!'
 end
