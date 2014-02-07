@@ -29,6 +29,7 @@ class Triangle
 		end
 		if a**2 == b**2 + c**2 || b**2 == a** + c**2 || c**2 == b**2 + a**2
 		then puts 'Its rectangular triangle'
+		else puts 'It is simple triangle'
 		end
 	end	
 	
