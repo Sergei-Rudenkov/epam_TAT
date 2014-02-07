@@ -4,6 +4,8 @@ import java.util.*;
 public class Triangle {
 	static Scanner scn = new Scanner(System.in);
 	String answer;
+// Конструктор принимает с клавиатуры значения, 
+//	проверяет их допустимость с помощью приватного метода notOk(answer)
 	Triangle(){
 		System.out.println("Hello puts please the sides of a traingle, like: 12,21,12");
 		answer = scn.nextLine();
@@ -12,7 +14,7 @@ public class Triangle {
 			answer = scn.nextLine();
 		}
 	}	
-	
+	// метод проверяет треугольник ли это?
 	public boolean daesItTriang(String  answer){
 		String[] arrOfSides = answer.split(",");
 		int a = Integer.parseInt(arrOfSides[0]);
@@ -24,6 +26,7 @@ public class Triangle {
 			return true;
 		}	
 	}
+	// три оператора if: равнобедренный, равносторонний, прямоугольный
 	public void whichOne(String  answer){
 		String[] arrOfSides = answer.split(",");
 		int a = Integer.parseInt(arrOfSides[0]);
@@ -39,6 +42,7 @@ public class Triangle {
 			System.out.println("It's rectangular triangle");
 		}	
 	}
+	// метод проверят допустимость значений введённых с клавиатуры
 	private static boolean notOk(String  answer){
 		if(answer != null ){
 			String[] arr = answer.split(",");
@@ -50,9 +54,8 @@ public class Triangle {
 		}else{
 			return true;
 		}	
-		
-		
 	}
+	
 	public static void main(String[] args) {
 		Triangle tr = new Triangle();
 			if(tr.daesItTriang(tr.answer)){
