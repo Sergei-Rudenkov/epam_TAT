@@ -8,9 +8,11 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import fr.commands.SelWC;
 //Main class
 public class Starter {
-	public static void main(String[] args) throws XPathExpressionException, ParserConfigurationException, SAXException, IOException{
+	public static void main(String[] args) throws XPathExpressionException, ParserConfigurationException, SAXException, IOException, InterruptedException{
 		NodeList nodes = Prser.getXml(); // Scan xml for commands and params
 		 for (int i=0; i<nodes.getLength();i++){ // first command tag from xml
 			 for (int j=0; j < StaticData.COMMANDS.length; j++){ // Scan for framework commands presence 
@@ -21,10 +23,11 @@ public class Starter {
 					 String log = "Command '" + command + "' was found in the " + line + "th line";
 					 System.out.println(log);
 					 int preority = 1;
-					 Prser.outPutLog(log, preority);
+					 Prser.writeToLog(log, preority);
 					 Resender.send(command,params); // Truly command and params going to the class where their fates will designed  
 				 }
 			 }
 		 }
+		 SelWC.driver.quit(); 
 	}
 }

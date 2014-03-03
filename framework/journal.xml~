@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <config>
-<command> Check title (Total posts,Total topics,Total members,Our newest member)
-<result> </result>
+<command> Check title (Total posts,Total topics,Total members,Our newest member,something ridiculous)
 </command>
-<command> Check login 
-</command>
+<command> Have current links(Board index,FAQ,Register,Login,View unanswered posts,View active topics) </command>
+<command> login (admin,123456) </command>
+<command> search (ololol,first) </command>
+<command> post message (Hello!!!,Hello world!) </command>
 </config>

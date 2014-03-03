@@ -47,12 +47,11 @@ public class Prser {
 	      		System.out.println("Error, empty xml file!");
 	      		 System.exit(0);
 	      	}
-	      System.out.println(nodes.item(i).getNodeValue());
 	      	
 	      }
 	    return nodes;
 	    }		
-	public static void outPutLog(String line, int preority) throws IOException{
+	public static void writeToLog(String line, int preority) throws IOException{
 		String tag = null;
 		if(preority == 2){tag = "h2";}
 		if(preority == 1){tag = "h4";}
